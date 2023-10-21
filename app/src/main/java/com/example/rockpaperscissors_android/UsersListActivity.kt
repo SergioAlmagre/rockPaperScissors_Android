@@ -5,9 +5,12 @@ import Api.ServiceBuilder
 import Api.UserAPI
 import InterConnection.InterConnections
 import Model.User
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -76,5 +79,25 @@ class UsersListActivity : AppCompatActivity() {
             }
         })
     }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menulistview, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            R.id.newUserMenu -> {
+                var intentV1 = Intent(this, NewUserActivity::class.java)
+                startActivity(intentV1)
+
+            }
+            R.id.exitMenu -> {
+                finish()
+            }
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+
 
 }
