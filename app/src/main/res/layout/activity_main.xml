@@ -17,6 +17,19 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/background" />
 
+    <Button
+        android:id="@+id/btnPlay"
+        style="@style/Widget.Material3.Button.ElevatedButton"
+        android:layout_width="134dp"
+        android:layout_height="46dp"
+        android:text="Play as guest"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.71" />
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/userInputLayout"
         android:layout_width="255dp"

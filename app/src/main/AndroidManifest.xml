@@ -16,7 +16,7 @@
         android:theme="@style/Theme.RockPaperScissors_Android"
         tools:targetApi="31">
         <activity
-            android:name=".Game"
+            android:name=".GameActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

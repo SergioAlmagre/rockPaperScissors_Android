@@ -22,7 +22,6 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
         binding.btnEnter.setOnClickListener {
 
             val us = User(
@@ -34,6 +33,7 @@ class MainActivity : AppCompatActivity() {
             val request = ServiceBuilder.buildService(UserAPI::class.java)
             val call = request.loginUser(us)
             var intentV1 = Intent(this, UsersListActivity::class.java)
+            var intentV2 = Intent(this, GameActivity::class.java)
 
 //            var intentV1 = Intent(this, Bienvenido::class.java)
 
@@ -44,8 +44,11 @@ class MainActivity : AppCompatActivity() {
 
                     if (post != null && response.isSuccessful) {
                         if (post.rol==1){
-                            intentV1.putExtra("usuarioIngresado",post)
+                            intentV1.putExtra("actualUser",post)
                             startActivity(intentV1)
+                        }else{
+                            intentV2.putExtra("actualUser",post)
+                            startActivity(intentV2)
                         }
                         Toast.makeText(this@MainActivity, "User found", Toast.LENGTH_SHORT).show()
                     } else {
@@ -57,6 +60,13 @@ class MainActivity : AppCompatActivity() {
                     Toast.makeText(this@MainActivity, "${t.message}", Toast.LENGTH_SHORT).show()
                 }
             })
+        }
+
+        binding.btnPlay.setOnClickListener {
+            var intentV2 = Intent(this@MainActivity, GameActivity::class.java)
+            var guestUser = User(3,"guest","guest",0)
+            intentV2.putExtra("guestUser",guestUser)
+            startActivity(intentV2)
         }
 
     }

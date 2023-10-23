@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/btnMenuNewGame"
+        android:title="New game" />
+    <item
+        android:id="@+id/btnMenuScore"
+        android:title="Score" />
+    <item
+        android:id="@+id/btnMenuGiveUp"
+        android:title="Give up" />
+</menu>

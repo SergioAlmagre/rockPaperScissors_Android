@@ -47,7 +47,7 @@ class UsersListActivity : AppCompatActivity() {
         val linearLayoutManager = LinearLayoutManager(applicationContext)
         recyclerView.layoutManager = linearLayoutManager
 
-        var user = intent.getSerializableExtra("usuarioIngresado") as User
+        var user = intent.getSerializableExtra("actualUser") as User
 
         getUsers()
 
